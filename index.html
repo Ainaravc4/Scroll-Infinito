@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-image: url(./fondo.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        h1{
+            color: white;
+            font-family:'Press Start 2P', cursive;
+            text-align: right;
+            animation-name: mover;
+            animation-duration: 4s;
+            animation-iteration-count:infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+        }
+        @keyframes mover {
+            from {
+                margin-right: 80%;
+                color: red;
+            }
+            to {
+                margin-right: 0%;
+                color: blue;
+            }
+        }
+        #demo{
+            width: 100vw;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        .personaje{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+        p{
+            color: white;
+        }
+        .window-notice {
+            background: rgba(33, 41, 52, .85);
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            display: flex;
+            position: fixed;
+            z-index: 999;
+        }
+        .window-notice #datos {
+            border-radius: 50px;
+            box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+            box-sizing: content-box;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            max-width: 600px;
+            min-width: 320px !important;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 2rem;
+            font-size: 1rem;
+        }
+        button{
+            height: 2rem;
+            width: 10rem;
+            margin: auto;
+            background-color: red;
+            color: white;
+            justify-self: center;
+            align-self: center;
+        }
+    </style>
+</head>
+<body >
+    <h1>StarsWars</h1>
+    <div id="demo"></div>
+    <button class="subir">Subir</button>
+    <div class="window-notice" id="window-notice">
+       
+            <div id="datos">
+                <p id="altura"></p>
+                <p id="peso"></p>
+                <p id="pelo"></p>
+                <p id="piel"></p>
+                <button>Cerrar</button>
+            </div>     
+    </div>
+</body>
+</html>
